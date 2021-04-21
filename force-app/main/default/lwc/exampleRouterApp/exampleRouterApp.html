@@ -1,0 +1,36 @@
+<template>
+
+    <c-router>
+
+        <c-example-route-link to="/">Home</c-example-route-link>
+        <c-example-route-link to="/page1">Page 1</c-example-route-link>
+        <c-example-route-link to="/page2">Page 2</c-example-route-link>
+        <c-example-route-link to="/page3?foo=bar&hello=world">Page 3 with query foo=bar and hello=world</c-example-route-link>
+        <c-example-route-link to="/page3?name=john&age=12">Page 3 with query name=john and age=12</c-example-route-link>
+        <c-example-route-link to="/page4/cat/1234">Dynamic route cat 1234</c-example-route-link>
+        <c-example-route-link to="/page4/dog/5678">Dynamic route dog 5678</c-example-route-link>
+        <c-example-route-link to="/noMatch">No Match</c-example-route-link>
+
+        <c-switch>
+            <c-route path="/">
+                <h1>This is Homepage</h1>
+            </c-route>
+            <c-route path="/page1">
+                <h1>This is Page 1</h1>
+            </c-route>
+            <c-route path="/page2">
+                <h1>This is Page 2</h1>
+            </c-route>
+            <c-route path="/page3">
+                <c-example-page-query-params></c-example-page-query-params>
+            </c-route>
+            <c-route path="/page4/:category/:id">
+                <c-example-page-dynamic-route></c-example-page-dynamic-route>
+            </c-route>
+            <c-route path="*">
+                <h1>This is fallback page</h1>
+            </c-route>
+        </c-switch>
+    </c-router>
+
+</template>
